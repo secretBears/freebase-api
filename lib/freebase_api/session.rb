@@ -9,8 +9,8 @@ module FreebaseAPI
     attr_reader :env, :key, :query_options
 
     # URIs of the Freebase API
-    # API_URL = "https://www.googleapis.com/freebase/v1"
-    API_URL = "http://vm187.webops.mediacube.at/qapi"
+    # API_URL = "
+    API_URL = (ENV['FREEBASE_URL'] || "https://www.googleapis.com/freebase/v1")
     SANDBOX_API_URL = "https://www.googleapis.com/freebase/v1sandbox"
 
     # Freebase default values
