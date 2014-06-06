@@ -79,6 +79,7 @@ module FreebaseAPI
     # @return [String] the url of the service
     def surl(service)
       service_url = @env == :stable ? API_URL : SANDBOX_API_URL
+      service_url = ENV['FREEBASE_URL'] unless ENV['FREEBASE_URL'].nil?
       service_url = service_url + "/" + service
       service_url.gsub!('www', 'usercontent') if service.to_s == 'image'
       service_url
